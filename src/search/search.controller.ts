@@ -1,6 +1,6 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { SearchService } from './search.service';
-import { Hotels } from './hotel.dto';
+import { Hotel } from './hotel.dto';
 
 @Controller('search')
 export class SearchController {
@@ -11,7 +11,7 @@ export class SearchController {
     @Query('offset') offset: number,
     @Query('limit') limit: number,
     @Query('filters') filters: string,
-  ): Hotels {
+  ): Hotel[] {
     // Parse the filters query parameter.
     let parsedFilters;
     if (filters) {

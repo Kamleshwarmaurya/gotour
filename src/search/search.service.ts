@@ -21,10 +21,12 @@ export class SearchService {
     }
 
     public findHotels (offset: number, limit: number, parsedFilters: string): Hotel[] {
-    
-
+        
+        if(parsedFilters) {
+            // parsed the data based on filters
+        }
         if(offset && limit) {
-            return hotelResults.hotels.splice(offset, limit);
+            return this.hotels.splice(offset, limit);
         }
 
         return this.hotels;
